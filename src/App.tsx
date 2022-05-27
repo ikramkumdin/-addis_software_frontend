@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import {GlobalStyle} from '../src/styles/global'
+import Layout from "./components/layout/Layout";
+import Routes from "./Routes";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+    <HelmetProvider>
+    <GlobalStyle/>
+    <Helmet>
+          <title>Addis Software test project</title>
+          <link rel="preconnect" href="https://fonts.googleapis.com"/>
+          <link rel="preconnect" href="https://fonts.gstatic.com"/>
+          <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/> 
+              
+    </Helmet>
+    <Layout>
+          
+    </Layout>
 
+    </HelmetProvider>
+
+   
+    </>
+  )
+}
 export default App;
+
+ 
